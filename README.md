@@ -4,7 +4,7 @@ Sistema web integral de experimentación estocástica, cálculo analítico y sim
 
 ---
 
-## 🏛️ Stack Tecnológico
+## Stack Tecnológico
 
 - **Frontend:** Next.js (App Router), TypeScript, Tailwind CSS con tokens del sistema de diseño **Ventriloc** (Graphite, Ash, Ember Orange, esquinas asimétricas y botones de ángulo vivo), Recharts para visualización vectorial, y validación con Zod.
 - **Backend:** Node.js con Express, TypeScript y arquitectura modular desacoplada en `/api`. Cálculos estadísticos puros en el servidor.
@@ -13,7 +13,7 @@ Sistema web integral de experimentación estocástica, cálculo analítico y sim
 
 ---
 
-## 🚀 Requisitos Previos
+## Requisitos Previos
 
 1. **Node.js:** Versión $\ge 18.x$ (probado en v22.14.0).
 2. **PostgreSQL:** Servidor local ejecutándose en el puerto estándar `5432`.
@@ -21,7 +21,7 @@ Sistema web integral de experimentación estocástica, cálculo analítico y sim
 
 ---
 
-## ⚙️ Instalación y Configuración
+## Instalación y Configuración
 
 1. **Clonar y posicionarse en la raíz del proyecto:**
    ```bash
@@ -53,7 +53,7 @@ Sistema web integral de experimentación estocástica, cálculo analítico y sim
 
 ---
 
-## 🧪 Ejecución de Pruebas Estadísticas
+## Ejecución de Pruebas Estadísticas
 
 Para verificar la rigurosidad matemática y el cumplimiento de las tolerancias requeridas:
 ```bash
@@ -66,7 +66,7 @@ Esto ejecutará la suite de Vitest validando:
 
 ---
 
-## 🌐 Puesta en Marcha en Desarrollo
+## Puesta en Marcha en Desarrollo
 
 Para levantar simultáneamente la API REST (puerto 4000) y la aplicación Web Next.js (puerto 3000):
 ```bash
@@ -79,7 +79,7 @@ Abra el navegador en:
 
 ---
 
-## 📁 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 simulador_esperanza_varianza/
@@ -112,8 +112,7 @@ simulador_esperanza_varianza/
 
 ---
 
-## 🎓 Documentos para la Defensa
+## Documentos para la Defensa
 - [docs/EXPLICACION.md](file:///c:/Users/aleja/Desktop/a/UCM-Proyectos/simulador_esperanza_varianza/docs/EXPLICACION.md): Mapeo detallado de fórmulas, archivos y funciones.
 - [docs/PREGUNTAS_DEFENSA.md](file:///c:/Users/aleja/Desktop/a/UCM-Proyectos/simulador_esperanza_varianza/docs/PREGUNTAS_DEFENSA.md): 15 preguntas y respuestas académicas para el jurado.
 - [docs/CAPTURAS.md](file:///c:/Users/aleja/Desktop/a/UCM-Proyectos/simulador_esperanza_varianza/docs/CAPTURAS.md): Guía para exportar las figuras del informe en PNG.
->>>>>>> cadc0 (feat: simulador esperanza y varianza modelo binomial con 3 casos reales)
