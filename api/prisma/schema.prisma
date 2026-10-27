@@ -1,0 +1,74 @@
+// Base de datos y cliente Prisma
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum OrigenDato {
+  real
+  sintetico
+}
+
+model Caso {
+  id            Int                 @id @default(autoincrement())
+  slug          String              @unique
+  nombre        String
+  descripcion   String
+  n             Int
+  p             Float
+  valorUnitario Float               @map("valor_unitario")
+  costoFijo     Float               @map("costo_fijo")
+  creadoEn      DateTime            @default(now()) @map("creado_en")
+  actualizadoEn DateTime            @updatedAt @map("actualizado_en")
+
+  registros     RegistroHistorico[]
+  simulaciones  Simulacion[]
+
+  @@map("casos")
+}
+
+model RegistroHistorico {
+  id        Int        @id @default(autoincrement())
+  casoId    Int        @map("caso_id")
+  fecha     DateTime
+  linea     String?
+  intentos  Int
+  exitos    Int
+  origen    OrigenDato @default(sintetico)
+  nota      String?
+  creadoEn  DateTime   @default(now()) @map("creado_en")
+
+  caso      Caso       @relation(fields: [casoId], references: [id], onDelete: Cascade)
+
+  @@index([casoId])
+  @@index([fecha])
+  @@map("registros_historicos")
+}
+
+model Simulacion {
+  id               Int      @id @default(autoincrement())
+  casoId           Int      @map("caso_id")
+  creadaEn         DateTime @default(now()) @map("creada_en")
+  n                Int
+  p                Float
+  numCorridas      Int      @map("num_corridas")
+  semilla          Int
+  media            Float
+  varianzaMuestral Float    @map("varianza_muestral")
+  desviacion       Float
+  esperanzaTeorica Float    @map("esperanza_teorica")
+  varianzaTeorica  Float    @map("varianza_teorica")
+  errorAbsMedia    Float    @map("error_abs_media")
+  errorRelMedia    Float    @map("error_rel_media")
+  muestras         Int[]
+
+  caso             Caso     @relation(fields: [casoId], references: [id], onDelete: Cascade)
+
+  @@index([casoId])
+  @@index([creadaEn])
+  @@map("simulaciones")
+}

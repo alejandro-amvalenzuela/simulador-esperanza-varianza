@@ -1,0 +1,20 @@
+{
+  "name": "simulador-esperanza-varianza",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Simulador estadístico de Esperanza, Media y Varianza para variables aleatorias discretas con modelo Binomial",
+  "scripts": {
+    "dev": "concurrently -n \"api,web\" -c \"blue,green\" \"npm run dev:api\" \"npm run dev:web\"",
+    "dev:api": "npm --prefix api run dev",
+    "dev:web": "npm --prefix web run dev",
+    "build": "npm --prefix api run build && npm --prefix web run build",
+    "test": "npm --prefix api run test",
+    "test:watch": "npm --prefix api run test:watch",
+    "db:migrate": "npm --prefix api run db:migrate",
+    "db:generate": "npm --prefix api run db:generate",
+    "db:seed": "npm --prefix api run db:seed"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
